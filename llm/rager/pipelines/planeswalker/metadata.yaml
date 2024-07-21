@@ -1,0 +1,209 @@
+blocks:
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    dynamic: null
+    file:
+      content: null
+      extension: py
+      language: python
+      modified_timestamp: 1721566311
+      name: synaptic_photon.py
+      output: null
+      path: /home/src/default_repo/llm/rager/data_loaders/synaptic_photon.py
+      relative_path: llm/rager/data_loaders/synaptic_photon.py
+      size: 1406
+    file_source:
+      path: rager/data_loaders/synaptic_photon.py
+    metadata:
+      required: true
+    templates:
+      api:
+        variables:
+          auth_token: null
+          endpoint: https://raw.githubusercontent.com/DataTalksClub/llm-zoomcamp/main/01-intro/documents.json
+          method: GET
+          timeout: 30
+  downstream_blocks:
+  - supernatural_nimbus
+  executor_config: null
+  executor_type: local_python
+  groups:
+  - ingest
+  has_callback: false
+  language: python
+  name: synaptic photon
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: data_loader
+  upstream_blocks: []
+  uuid: synaptic_photon
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    dynamic: null
+    file_source:
+      path: rager/transformers/supernatural_nimbus.py
+    metadata:
+      required: true
+  downstream_blocks:
+  - transcendent_incantation
+  executor_config: null
+  executor_type: local_python
+  groups:
+  - chunking
+  has_callback: false
+  language: python
+  name: supernatural nimbus
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - synaptic_photon
+  uuid: supernatural_nimbus
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    dynamic: null
+    file_source:
+      path: rager/transformers/transcendent_incantation.py
+    metadata:
+      required: true
+    templates:
+      lemmatization_spacy:
+        variables:
+          handle_stopwords: false
+          language: en
+          use_pos_tags: true
+  downstream_blocks:
+  - enigmatic_helix
+  executor_config: null
+  executor_type: local_python
+  groups:
+  - tokenization
+  has_callback: false
+  language: python
+  name: transcendent incantation
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - supernatural_nimbus
+  uuid: transcendent_incantation
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    dynamic: null
+    file_source:
+      path: rager/transformers/enigmatic_helix.py
+    metadata:
+      required: true
+    templates:
+      spacy_embeddings:
+        variables:
+          model_name: en_core_web_sm
+  downstream_blocks:
+  - prismatic_umbra
+  executor_config: null
+  executor_type: local_python
+  groups:
+  - embed
+  has_callback: false
+  language: python
+  name: enigmatic helix
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: transformer
+  upstream_blocks:
+  - transcendent_incantation
+  uuid: enigmatic_helix
+- all_upstream_blocks_executed: false
+  color: null
+  configuration:
+    dynamic: null
+    file:
+      content: null
+      extension: py
+      language: python
+      modified_timestamp: 1721567204
+      name: prismatic_umbra.py
+      output: null
+      path: /home/src/default_repo/llm/rager/data_exporters/prismatic_umbra.py
+      relative_path: llm/rager/data_exporters/prismatic_umbra.py
+      size: 2054
+    file_source:
+      path: rager/data_exporters/prismatic_umbra.py
+    metadata:
+      required: true
+    templates:
+      elasticsearch:
+        variables:
+          connection_string: http://host.docker.internal:9200
+          dimensions: null
+          index_name: documents
+          number_of_replicas: 0
+          number_of_shards: 1
+          vector_column_name: embedding
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  groups:
+  - vector_database
+  has_callback: false
+  language: python
+  name: prismatic umbra
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks:
+  - enigmatic_helix
+  uuid: prismatic_umbra
+- all_upstream_blocks_executed: true
+  color: null
+  configuration:
+    file_source:
+      path: rager/data_exporters/hypnotic_quantum.py
+  downstream_blocks: []
+  executor_config: null
+  executor_type: local_python
+  groups:
+  - vector_database
+  has_callback: false
+  language: python
+  name: hypnotic quantum
+  retry_config: null
+  status: not_executed
+  timeout: null
+  type: data_exporter
+  upstream_blocks: []
+  uuid: hypnotic_quantum
+cache_block_output_in_memory: false
+callbacks: []
+concurrency_config: {}
+conditionals: []
+created_at: '2024-07-21 12:50:44.677768+00:00'
+data_integration: null
+description: null
+execution_framework: rag
+executor_config: {}
+executor_count: 1
+executor_type: null
+extensions: {}
+name: Planeswalker
+notification_config: {}
+remote_variables_dir: null
+retry_config: {}
+run_pipeline_in_one_process: false
+settings:
+  triggers: null
+spark_config: {}
+tags: []
+type: python
+uuid: planeswalker
+variables_dir: /root/.mage_data/rager
+widgets: []
