@@ -1,5 +1,5 @@
 services:
-  platform:
+  magic-platform:
     env_file:
       - .env.dev
     build:
@@ -16,11 +16,11 @@ services:
     networks:
       - app-network
     depends_on:
-      - database
+      - magic-database
     stdin_open: true # used for interactive debugging
     tty: true # used for interactive debugging
 
-  database:
+  magic-database:
     image: pgvector/pgvector:0.6.0-pg16
     env_file:
       - .env.dev
