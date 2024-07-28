@@ -6,13 +6,16 @@ import spacy
 
 @transformer
 def spacy_embeddings(documents: List[Dict], *args, **kwargs) -> List[Dict]:
+    count = len(documents)
+    print('Documents', count)
+
+
     data = []
     
-    count = len(documents)
-    
     for idx, document in enumerate(documents):
+        document_id = document['document_id']
         if idx % 100 == 0:
-            print(f'{idx + 1}/{count}')
+		        print(f'{idx + 1}/{count}')
         
         nlp = spacy.load('en_core_web_sm')
         tokens = document['tokens']
@@ -29,7 +32,5 @@ def spacy_embeddings(documents: List[Dict], *args, **kwargs) -> List[Dict]:
             document_id=document['document_id'],
             embedding=embedding,
         ))
-
-    print('Sample', data[0]['embedding'])
     
     return [data]

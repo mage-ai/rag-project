@@ -4,16 +4,18 @@ import spacy
 
 
 @transformer
-def lemmatize_text(documents: List[Dict], *args, **kwargs):
-    print('Documents', len(documents))
-    sample = kwargs.get('sample', -1)
+def lemmatize_text(documents: List[Dict], *args, **kwargs) -> List[Dict]:
+    count = len(documents)
+    print('Documents', count)
 
     nlp = spacy.load('en_core_web_sm')
 
     data = []
 
-    for document in documents[:sample]:
+    for idx, document in enumerate(documents):
         document_id = document['document_id']
+        if idx % 100 == 0:
+            print(f'{idx + 1}/{count}')
 
         # Process the text chunk using spaCy
         chunk = document['chunk']

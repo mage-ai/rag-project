@@ -2,21 +2,18 @@ blocks:
 - all_upstream_blocks_executed: true
   color: null
   configuration:
-    dynamic: null
     file:
       content: null
       extension: py
       language: python
-      modified_timestamp: 1721566311
-      name: synaptic_photon.py
+      modified_timestamp: 1722152262
+      name: runic_oblivion.py
       output: null
-      path: /home/src/default_repo/llm/rager/data_loaders/synaptic_photon.py
-      relative_path: llm/rager/data_loaders/synaptic_photon.py
+      path: /home/src/default_repo/llm/rager/data_loaders/runic_oblivion.py
+      relative_path: llm/rager/data_loaders/runic_oblivion.py
       size: 1406
     file_source:
-      path: rager/data_loaders/synaptic_photon.py
-    metadata:
-      required: true
+      path: rager/data_loaders/runic_oblivion.py
     templates:
       api:
         variables:
@@ -24,121 +21,102 @@ blocks:
           endpoint: https://raw.githubusercontent.com/DataTalksClub/llm-zoomcamp/main/01-intro/documents.json
           method: GET
           timeout: 30
-  downstream_blocks:
-  - supernatural_nimbus
+  downstream_blocks: []
   executor_config: null
   executor_type: local_python
   groups:
   - ingest
   has_callback: false
   language: python
-  name: synaptic photon
+  name: Runic oblivion
   retry_config: null
   status: not_executed
   timeout: null
   type: data_loader
   upstream_blocks: []
-  uuid: synaptic_photon
-- all_upstream_blocks_executed: false
+  uuid: runic_oblivion
+- all_upstream_blocks_executed: true
   color: null
   configuration:
-    dynamic: null
     file_source:
-      path: rager/transformers/supernatural_nimbus.py
-    metadata:
-      required: true
-  downstream_blocks:
-  - transcendent_incantation
+      path: rager/transformers/radiant_photon.py
+  downstream_blocks: []
   executor_config: null
   executor_type: local_python
   groups:
   - chunking
   has_callback: false
   language: python
-  name: supernatural nimbus
+  name: Radiant photon
   retry_config: null
   status: not_executed
   timeout: null
   type: transformer
-  upstream_blocks:
-  - synaptic_photon
-  uuid: supernatural_nimbus
-- all_upstream_blocks_executed: false
+  upstream_blocks: []
+  uuid: radiant_photon
+- all_upstream_blocks_executed: true
   color: null
   configuration:
-    dynamic: null
     file_source:
-      path: rager/transformers/transcendent_incantation.py
-    metadata:
-      required: true
+      path: rager/transformers/vivid_nexus.py
     templates:
       lemmatization_spacy:
         variables:
           handle_stopwords: false
           language: en
           use_pos_tags: true
-  downstream_blocks:
-  - enigmatic_helix
+  downstream_blocks: []
   executor_config: null
   executor_type: local_python
   groups:
   - tokenization
   has_callback: false
   language: python
-  name: transcendent incantation
+  name: Vivid nexus
   retry_config: null
   status: not_executed
   timeout: null
   type: transformer
-  upstream_blocks:
-  - supernatural_nimbus
-  uuid: transcendent_incantation
-- all_upstream_blocks_executed: false
+  upstream_blocks: []
+  uuid: vivid_nexus
+- all_upstream_blocks_executed: true
   color: null
   configuration:
-    dynamic: null
     file_source:
-      path: rager/transformers/enigmatic_helix.py
-    metadata:
-      required: true
+      path: rager/transformers/prismatic_axiom.py
     templates:
       spacy_embeddings:
         variables:
           model_name: en_core_web_sm
-  downstream_blocks:
-  - prismatic_umbra
+  downstream_blocks: []
   executor_config: null
   executor_type: local_python
   groups:
   - embed
   has_callback: false
   language: python
-  name: enigmatic helix
+  name: Prismatic axiom
   retry_config: null
   status: not_executed
   timeout: null
   type: transformer
-  upstream_blocks:
-  - transcendent_incantation
-  uuid: enigmatic_helix
-- all_upstream_blocks_executed: false
+  upstream_blocks: []
+  uuid: prismatic_axiom
+- all_upstream_blocks_executed: true
   color: null
   configuration:
-    dynamic: null
     file:
       content: null
       extension: py
       language: python
-      modified_timestamp: 1721567204
-      name: prismatic_umbra.py
+      modified_timestamp: 1722154146
+      name: numinous_fission.py
       output: null
-      path: /home/src/default_repo/llm/rager/data_exporters/prismatic_umbra.py
-      relative_path: llm/rager/data_exporters/prismatic_umbra.py
+      path: /home/src/default_repo/llm/rager/data_exporters/numinous_fission.py
+      relative_path: llm/rager/data_exporters/numinous_fission.py
       size: 2054
     file_source:
-      path: rager/data_exporters/prismatic_umbra.py
-    metadata:
-      required: true
+      path: rager/data_exporters/numinous_fission.py
     templates:
       elasticsearch:
         variables:
@@ -155,38 +133,18 @@ blocks:
   - vector_database
   has_callback: false
   language: python
-  name: prismatic umbra
-  retry_config: null
-  status: not_executed
-  timeout: null
-  type: data_exporter
-  upstream_blocks:
-  - enigmatic_helix
-  uuid: prismatic_umbra
-- all_upstream_blocks_executed: true
-  color: null
-  configuration:
-    file_source:
-      path: rager/data_exporters/hypnotic_quantum.py
-  downstream_blocks: []
-  executor_config: null
-  executor_type: local_python
-  groups:
-  - vector_database
-  has_callback: false
-  language: python
-  name: hypnotic quantum
+  name: Numinous fission
   retry_config: null
   status: not_executed
   timeout: null
   type: data_exporter
   upstream_blocks: []
-  uuid: hypnotic_quantum
+  uuid: numinous_fission
 cache_block_output_in_memory: false
 callbacks: []
 concurrency_config: {}
 conditionals: []
-created_at: '2024-07-21 12:50:44.677768+00:00'
+created_at: '2024-07-28 06:46:55.938489+00:00'
 data_integration: null
 description: null
 execution_framework: rag
@@ -194,7 +152,7 @@ executor_config: {}
 executor_count: 1
 executor_type: null
 extensions: {}
-name: Planeswalker
+name: RAGic
 notification_config: {}
 remote_variables_dir: null
 retry_config: {}
@@ -204,6 +162,6 @@ settings:
 spark_config: {}
 tags: []
 type: python
-uuid: planeswalker
+uuid: ragic
 variables_dir: /root/.mage_data/rager
 widgets: []
