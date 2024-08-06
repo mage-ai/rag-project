@@ -13,6 +13,7 @@ ENV USER_CODE_PATH=${USER_CODE_PATH}
 # Install custom Python libraries and dependencies for your project.
 RUN pip3 install -r ${USER_CODE_PATH}/requirements.txt
 RUN pip3 install --no-cache-dir "git+https://github.com/mage-ai/mage-ai.git@td--create_blocks_tmp3#egg=mage-ai[all]"
+RUN python -m spacy download en_core_web_sm
 
 ENV PYTHONPATH="${PYTHONPATH}:${MAGE_CODE_PATH}/${PROJECT_NAME}"
 
